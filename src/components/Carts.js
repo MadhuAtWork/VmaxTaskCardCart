@@ -99,12 +99,12 @@ export default function Carts() {
           <Button onClick={(e) => handleEvent(e, "List")}>List</Button>
         </div>
 
-        <div>
+        <div className="row ">
           {data
             ?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             ?.map((value, index) => {
               return (
-                <div className="row d-flex mainDiv">
+                < >
                   {type == "Grid" ? (
                     <div className="col-4 cardDiv" item key={index}>
                       <Card sx={{ width: 200 }}>
@@ -156,7 +156,7 @@ export default function Carts() {
                 </div>
               );
             })}
-        </div>
+        </>
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
