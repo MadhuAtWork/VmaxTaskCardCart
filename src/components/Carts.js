@@ -153,10 +153,10 @@ export default function Carts() {
                       </Card>
                     </div>
                   )}
-                </div>
+                </>
               );
             })}
-        </>
+        </div>
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
