@@ -20,7 +20,7 @@ export default function Carts() {
   const [filter, setFilter] = useState();
   const [filterData, setFilterData] = useState([]);
 
-  const [page, setPage] = React.useState(2);
+  const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const handleChangePage = (event, newPage) => {
@@ -78,6 +78,15 @@ export default function Carts() {
   return (
     <>
       <div>
+      <TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={data?.length}
+          page={page}
+          onPageChange={handleChangePage}
+          rowsPerPage={rowsPerPage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
         <div className="row">
           <div className="col-6">
             <input
@@ -157,15 +166,7 @@ export default function Carts() {
               );
             })}
         </div>
-        <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
-          component="div"
-          count={data?.length}
-          page={page}
-          onPageChange={handleChangePage}
-          rowsPerPage={rowsPerPage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
+      
       </div>
     </>
   );
